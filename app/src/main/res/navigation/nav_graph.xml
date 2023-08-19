@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/countriesFragment">
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.weatherforecast.app.feature.ui.country.CountriesFragment"
+        android:label="countries_fragment"
+        tools:layout="@layout/countries_fragment">
+        <action
+            android:id="@+id/action_countriesFragment_to_forecastFragment"
+            app:destination="@id/forecastFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastFragment"
+        android:name="com.weatherforecast.app.feature.ui.forecast.ForecastFragment"
+        android:label="forecast_fragment"
+        tools:layout="@layout/forecast_fragment">
+        <argument
+            android:name="city"
+            app:argType="string" />
+    </fragment>
+</navigation>
